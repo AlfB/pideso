@@ -23,7 +23,7 @@ var jsonSource_Edo_Mx = new ol.source.Vector();
 jsonSource_Edo_Mx.addFeatures(features_Edo_Mx);var lyr_Edo_Mx = new ol.layer.Vector({
                 source:jsonSource_Edo_Mx, 
                 style: style_Edo_Mx,
-                title: "Edo_Méx"
+                title: "Estado de Méxio"
             });var format_Localidades = new ol.format.GeoJSON();
 var features_Localidades = format_Localidades.readFeatures(geojson_Localidades, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
@@ -43,22 +43,22 @@ jsonSource_Prioritarias.addFeatures(features_Prioritarias);var lyr_Prioritarias 
             });
 var group_group1 = new ol.layer.Group({
                                 layers: [lyr_Edo_Mx],
-                                title: "Edo_Méx"});
+                                title: "Estado"});
 
 lyr_Regiones.setVisible(true);lyr_Edo_Mx.setVisible(true);lyr_Localidades.setVisible(true);lyr_Prioritarias.setVisible(true);
 var layersList = [baseLayer,group_group1,lyr_Localidades,lyr_Prioritarias,lyr_Regiones];
 lyr_Regiones.set('fieldAliases', {'GID': 'GID', 'Nombre': 'Nombre', 'Region': 'Region', });
 lyr_Edo_Mx.set('fieldAliases', {'CVE_ENT': 'CVE_ENT', 'CVE_MUN': 'CVE_MUN', 'ClaveMun': 'ClaveMun', });
-lyr_Localidades.set('fieldAliases', {'GID': 'GID', 'Nom_Region': 'Nom_Region', 'Nom_Munici': 'Nom_Munici', 'Nom_Locali': 'Nom_Locali', 'CVE_Loc': 'CVE_Loc', });
-lyr_Prioritarias.set('fieldAliases', {'GID': 'GID', 'Nom_Region': 'Nom_Region', 'Municipio': 'Municipio', 'Nom_Locali': 'Nom_Locali', 'CVE_Loc': 'CVE_Loc', });
+lyr_Localidades.set('fieldAliases', {'GID': 'GID', 'Nom_Region': 'Región', 'Nom_Munici': 'Municipio', 'Nom_Locali': 'Localidad', 'CVE_Loc': 'CVE_Loc', });
+lyr_Prioritarias.set('fieldAliases', {'GID': 'GID', 'Nom_Region': 'Región', 'Municipio': 'Municipio', 'Nom_Locali': 'Localidad', 'CVE_Loc': 'CVE_Loc', });
 lyr_Regiones.set('fieldImages', {'GID': 'TextEdit', 'Nombre': 'TextEdit', 'Region': 'TextEdit', });
 lyr_Edo_Mx.set('fieldImages', {'CVE_ENT': 'TextEdit', 'CVE_MUN': 'TextEdit', 'ClaveMun': 'TextEdit', });
 lyr_Localidades.set('fieldImages', {'GID': 'TextEdit', 'Nom_Region': 'TextEdit', 'Nom_Munici': 'TextEdit', 'Nom_Locali': 'TextEdit', 'CVE_Loc': 'TextEdit', });
 lyr_Prioritarias.set('fieldImages', {'GID': 'TextEdit', 'Nom_Region': 'TextEdit', 'Municipio': 'TextEdit', 'Nom_Locali': 'TextEdit', 'CVE_Loc': 'TextEdit', });
 lyr_Regiones.set('fieldLabels', {'GID': 'inline label', 'Nombre': 'inline label', 'Region': 'inline label', });
 lyr_Edo_Mx.set('fieldLabels', {'CVE_ENT': 'inline label', 'CVE_MUN': 'inline label', 'ClaveMun': 'inline label', });
-lyr_Localidades.set('fieldLabels', {'GID': 'inline label', 'Nom_Region': 'inline label', 'Nom_Munici': 'inline label', 'Nom_Locali': 'inline label', 'CVE_Loc': 'inline label', });
-lyr_Prioritarias.set('fieldLabels', {'GID': 'inline label', 'Nom_Region': 'inline label', 'Municipio': 'inline label', 'Nom_Locali': 'inline label', 'CVE_Loc': 'inline label', });
+lyr_Localidades.set('fieldLabels', {'GID': 'inline label', 'Nom_Region': 'inline label', 'Nom_Munici': 'inline label', 'Nom_Locali': 'inline label', 'CVE_Loc': 'no label', });
+lyr_Prioritarias.set('fieldLabels', {'GID': 'inline label', 'Nom_Region': 'inline label', 'Municipio': 'inline label', 'Nom_Locali': 'inline label', 'CVE_Loc': 'no label', });
 lyr_Prioritarias.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
