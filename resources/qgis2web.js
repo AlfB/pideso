@@ -83,7 +83,7 @@ var scaleLineControl = new ol.control.ScaleLine();
 
 var map = new ol.Map({
     controls: ol.control.defaults({attribution:false}).extend([scaleLineControl,
-        expandedAttribution,new measureControl(),new geolocateControl(),
+        expandedAttribution,new measureControl(),/*new geolocateControl(),*/
 		new ol.control.MousePosition({
 					coordinateFormat: ol.coordinate.createStringXY(4),
                     projection: ('EPSG:3857','EPSG:4326')
