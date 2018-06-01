@@ -70,17 +70,20 @@ var group_group1 = new ol.layer.Group({
 			
 lyr_localidades_edomex_3_0.setVisible(true);lyr_Prioritarias_1.setVisible(true);lyr_Municipios_2.setVisible(true);lyr_MunReg_3_3.setVisible(true);
 var layersList = [baseLayer,lyr_localidades_edomex_3_0,lyr_Prioritarias_1,group_group1,lyr_MunReg_3_3];
-lyr_localidades_edomex_3_0.set('fieldAliases', {'GID': 'GID', 'Nom_Region': 'Nom_Region', 'Nom_Munici': 'Nom_Munici', 'Nom_Locali': 'Nom_Locali', 'CVE_Loc': 'CVE_Loc', });
+lyr_localidades_edomex_3_0.set('fieldAliases', {'GID': 'ID', 'Region': 'Región', 'Mun': 'Municipio', 'Loc': 'Localidad', 'localidad_id': 'Clave_Localidad',
+'pobreza_extrema':'Pobreza extrema','pobreza_moderada':'Pobreza moderada','vulnerable_por_ingresos':'Vulnerable por ingresos', 'vulnerable_por_carencias':'Vulnerable por carencias','no_vulnerable':'No Vulnerable', });
 lyr_Prioritarias_1.set('fieldAliases', {'GID': 'GID', 'Nom_Region': 'Nom_Region', 'Municipio': 'Municipio', 'Nom_Locali': 'Nom_Locali', 'CVE_Loc': 'CVE_Loc', });
 lyr_Municipios_2.set('fieldAliases', {'CVE_ENT': 'CVE_ENT', 'CVE_MUN': 'CVE_MUN', 'ClaveMun': 'ClaveMun', });
 lyr_MunReg_3_3.set('fieldAliases', {'GID': 'ID','Mun': 'Municipio', 'Region': 'Región', 'pobreza_extrema':'Pobreza extrema','pobreza_moderada': 'Pobreza moderada',
 'vulnerable_por_ingresos':'Vulnerable por ingresos','vulnerable_por_carencias':'Vulnerable por carencia','no_vulnerable':'No Vulnerable',});
-lyr_localidades_edomex_3_0.set('fieldImages', {'GID': 'TextEdit', 'Nom_Region': 'TextEdit', 'Nom_Munici': 'TextEdit', 'Nom_Locali': 'TextEdit', 'CVE_Loc': 'TextEdit', });
+lyr_localidades_edomex_3_0.set('fieldImages', {'GID': 'TextEdit', 'Region': 'TextEdit', 'Mun': 'TextEdit', 'Loc': 'TextEdit', 'localidad_id': 'TextEdit',
+'pobreza_extrema':'TextEdit', 'pobreza_moderada':'TextEdit','vulnerable_por_ingresos':'TextEdit','vulnerable_por_carencias':'TextEdit','no_vulnerable':'TextEdit', });
 lyr_Prioritarias_1.set('fieldImages', {'GID': 'TextEdit', 'Nom_Region': 'TextEdit', 'Municipio': 'TextEdit', 'Nom_Locali': 'TextEdit', 'CVE_Loc': 'TextEdit', });
 lyr_Municipios_2.set('fieldImages', {'CVE_ENT': 'TextEdit', 'CVE_MUN': 'TextEdit', 'ClaveMun': 'TextEdit', });
 lyr_MunReg_3_3.set('fieldImages', {'GID': 'TextEdit', 'Mun': 'TextEdit', 'Region': 'TextEdit', 'pobreza_extrema':'TextEdit','pobreza_moderada':'TextEdit',
 'vulnerable_por_ingresos':'TextEdit','vulnerable_por_carencias':'TextEdit','no_vulnerable':'TextEdit',});
-lyr_localidades_edomex_3_0.set('fieldLabels', {'GID': 'inline label', 'Nom_Region': 'inline label', 'Nom_Munici': 'inline label', 'Nom_Locali': 'inline label', 'CVE_Loc': 'inline label', });
+lyr_localidades_edomex_3_0.set('fieldLabels', {'GID': 'inline label', 'Region': 'inline label', 'Mun': 'inline label', 'Loc': 'inline label', 'localidad_id': 'inline label', 
+'pobreza_extrema':'inline label','pobreza_moderada':'inline label','vulnerable_por_ingresos':'inline label','vulnerable_por_carencias':'inline label','no_vulnerable':'inline label',});
 lyr_Prioritarias_1.set('fieldLabels', {'GID': 'inline label', 'Nom_Region': 'inline label', 'Municipio': 'inline label', 'Nom_Locali': 'inline label', 'CVE_Loc': 'inline label', });
 lyr_Municipios_2.set('fieldLabels', {'CVE_ENT': 'inline label', 'CVE_MUN': 'inline label', 'ClaveMun': 'inline label', });
 lyr_MunReg_3_3.set('fieldLabels', {'GID': 'inline label', 'Mun': 'inline label', 'Region': 'inline label','pobreza_extrema':'inline label','pobreza_moderada':'inline label',
