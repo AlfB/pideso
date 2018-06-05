@@ -4,10 +4,8 @@ function api(){
         req.send(null);
         return JSON.parse(req.responseText);
     }
-
-	 var x = api();
-	console.log(x);
-
+	var x = api();
+	 
 var json_Prioritarias_1 = {
 "type": "FeatureCollection",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },

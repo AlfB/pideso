@@ -4,9 +4,7 @@ function api(){
         req.send(null);
         return JSON.parse(req.responseText);
     }
-    var x = api();
-	console.log(x);
-
+	var x = api();
 
 var json_localidades_edomex_3_0 = {
 "type": "FeatureCollection",

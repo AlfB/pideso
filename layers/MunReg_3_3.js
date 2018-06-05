@@ -5,7 +5,6 @@ function api(){
         return JSON.parse(req.responseText);
     }
     var x = api();
-	console.log(x);
 
 
 var json_MunReg_3_3 = {
