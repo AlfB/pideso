@@ -103,7 +103,7 @@ var map = new ol.Map({
 
     var searchLayer = new ol.SearchLayer({
       layer: lyr_localidades_edomex_3_0,
-      colName: 'Nom_Locali',
+      colName: 'Loc',
       zoom: 8,
       collapsed: true,
       map: map
