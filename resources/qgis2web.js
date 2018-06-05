@@ -240,7 +240,7 @@ var onSingleClick = function(evt) {
         }
 		
         if (doPopup == false) {
-            popupText = '<div class="row"> <div class="col-sm-3"></div><div class="col-sm-6"><table class="table table-condensed">';
+            popupText = '<div class="row"> <div class="col-sm-3"><table class="table table-condensed">';
             for (var i=0; i<currentFeatureKeys.length; i++) {
                 if (currentFeatureKeys[i] != 'geometry') {
                     popupField = '';
@@ -257,7 +257,7 @@ var onSingleClick = function(evt) {
                     } else {
                         popupField += (currentFeature.get(currentFeatureKeys[i]) != null ? '<img src="images/' + currentFeature.get(currentFeatureKeys[i]).replace(/[\\\/:]/g, '_').trim()  + '" /></td>' : '');
                     }
-                    popupText = popupText + '<tr>' + popupField + '</tr>';
+                    popupText = popupText + '<th>' + popupField + '</th>';
                 }
             }
 			document.getElementById("info").innerHTML = popupText + '</table></div></div>';

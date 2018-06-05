@@ -7,11 +7,9 @@ html, body {
 }
 
 th, td {
-	font-size:12px;
+	font-size:10px;
 }
-#info {
-   float:right;
-}
+
 #map {
     width: 90%;
     height: 90%;
@@ -52,16 +50,3 @@ th, td {
     font-family: sans-serif;
     font-size: 100%;
 }
-
-/*#popup-content>ul>li:nth-child(even) {
-    background-color: #eee;
-}
-
-#popup-content ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-#popup-content li {
-    margin-bottom:0.25em;
-}*/
