@@ -130,7 +130,6 @@ function getPopupFields(layerList, layer) {
 }
 
 
-
 var collection = new ol.Collection();
 var featureOverlay = new ol.layer.Vector({
     map: map,
@@ -409,13 +408,13 @@ var measureLayer = new ol.layer.Vector({
             color: 'rgba(255, 255, 255, 0.2)'
         }),
         stroke: new ol.style.Stroke({
-            color: '#3BAF09',
+            color: '#ffcc33',
             width: 3
         }),
         image: new ol.style.Circle({
             radius: 7,
             fill: new ol.style.Fill({
-                color: '#3BAF09'
+                color: '#ffcc33'
             })
         })
     })
@@ -528,7 +527,14 @@ var wgs84Sphere = new ol.Sphere(6378137);
  */
 var formatLength = function(line) {
   var length;
-    length = Math.round(line.getLength() * 100) / 100;
+  var coordinates = line.getCoordinates();
+  length = 0;
+  var sourceProj = map.getView().getProjection();
+  for (var i = 0, ii = coordinates.length - 1; i < ii; ++i) {
+      var c1 = ol.proj.transform(coordinates[i], sourceProj, 'EPSG:4326');
+      var c2 = ol.proj.transform(coordinates[i + 1], sourceProj, 'EPSG:4326');
+      length += wgs84Sphere.haversineDistance(c1, c2);
+    }
   var output;
   if (length > 100) {
     output = (Math.round(length / 1000 * 100) / 100) +
@@ -543,7 +549,7 @@ var formatLength = function(line) {
 addInteraction();
 
 
-     var geolocation = new ol.Geolocation({
+      var geolocation = new ol.Geolocation({
   projection: map.getView().getProjection()
 });
 
@@ -582,9 +588,11 @@ var geolocateOverlay = new ol.layer.Vector({
 geolocation.setTracking(true);
 
 
+
 var attribution = document.getElementsByClassName('ol-attribution')[0];
 var attributionList = attribution.getElementsByTagName('ul')[0];
 var firstLayerAttribution = attributionList.getElementsByTagName('li')[0];
 var qgis2webAttribution = document.createElement('li');
 qgis2webAttribution.innerHTML = '<a href="https://github.com/tomchadwin/qgis2web">qgis2web</a>';
 attributionList.insertBefore(qgis2webAttribution, firstLayerAttribution);
+
